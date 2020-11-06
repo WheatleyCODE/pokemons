@@ -6,14 +6,14 @@ import { fetchPokemonsAC } from '../../Redux/actions'
 import Loader from '../Loader/Loader'
 
 const MainPage = ({ pokemonsData, fetchPokemons }) => {
-  console.log(pokemonsData.loading, 'kkkkkkkkkk')
   useEffect(() => {
     fetchPokemons()
-  }, []);
+  }, [])
+
   const pokemons = pokemonsData.pokemons.map((elem) => {
-    return <PokemonCard key={elem.name} name={elem.name} />
+    return <PokemonCard key={elem.name} pokemon={elem} />
   })
-  console.log(pokemons)
+
   return (
     <div className="mainPage">
       <div className="mainPage-pokemons">

@@ -25,11 +25,17 @@ export function fetchPokemonsError(error) {
 
 export const fetchPokemonsAC = () => (
   async (dispatch) => {
-    console.log('hellolololo')
     dispatch(fetchPokemonsStart())
     try {
-      const response = await Axios.get('https://pokeapi.co/api/v2/pokemon?limit=60&offset=0')
-      dispatch(fetchPokemonsSuccess(response.data.results))
+      const response = await Axios.get('https://pokeapi.co/api/v2/pokemon?limit=30&offset=0')
+      const pokemons = []
+      const promises = response.data.results.map((elem) => {
+        return Axios.get(elem.url)
+      })
+      for await (const promise of promises) {
+        pokemons.push(promise.data)
+      }
+      dispatch(fetchPokemonsSuccess(pokemons))
     } catch (error) {
       dispatch(fetchPokemonsError(error))
     }

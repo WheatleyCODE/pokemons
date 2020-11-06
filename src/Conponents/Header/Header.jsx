@@ -1,8 +1,10 @@
 import React, { useState } from 'react'
+import { connect } from 'react-redux'
 import ToggleMenu from './ToggleMenu/ToggleMenu'
 import './Header.scss'
 
-const Header = () => {
+const Header = ({ pokemonsData }) => {
+
   const [isOpen, setIsOpen] = useState(false)
 
   const onClickHandler = () => {
@@ -20,9 +22,21 @@ const Header = () => {
         </button>
         <span className="header-panel-logo">Pokemons wrap</span>
       </div>
-      {isOpen ? <div><ToggleMenu /><div onClick={onClickHandler} className="shadow">12134</div></div> : null}
+      {isOpen ? <div><ToggleMenu pokemons={pokemonsData.pokemons} /><div onClick={onClickHandler} className="shadow"></div></div> : null}
     </div>
   )
 }
 
-export default Header
+function mapStateToProps(state) {
+  return {
+    pokemonsData: state.mainPageData,
+  }
+}
+
+function mapDispatchToProps(dispatch) {
+  return {
+    // fetchPokemons: () => dispatch(fetchPokemonsAC()),
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Header)
