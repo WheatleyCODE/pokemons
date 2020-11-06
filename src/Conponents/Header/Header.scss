@@ -1,21 +1,26 @@
 @import '../../styles/mixins';
 
 .header {
+  position: fixed;
   width: 100%;
   height: 60px;
   display: flex;
   justify-content: center;
+  border-bottom: 1px solid black;
+  background-color: #fff;
 }
 .header-panel {
   position: relative;
-  width: 90%;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
 
   .header-panel-nemu {
     position: absolute;
+    z-index: 100;
     left: 0;
+    margin-left: 50px;
     width: 50px;
     height: 100%;
     font-size: 40px;
@@ -30,4 +35,12 @@
   .header-panel-logo {
     font-size: 30px;
   }
+}
+.shadow {
+  position: absolute;
+  z-index: 0;
+  right: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.212);
 }

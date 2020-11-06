@@ -1,9 +1,12 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom'
 import './PokemonCard.scss'
 
 const PokemonCard = ({ name }) => {
   return (
-    <div className="pokemonCard">{name}</div>
+    <NavLink to={`${name}`}>
+      <div className="pokemonCard">{name}</div>
+    </NavLink>
   )
 }
 export default PokemonCard
