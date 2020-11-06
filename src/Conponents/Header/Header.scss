@@ -1,5 +1,33 @@
+@import '../../styles/mixins';
+
 .header {
-  background-color: red;
   width: 100%;
-  height: 50px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+}
+.header-panel {
+  position: relative;
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .header-panel-nemu {
+    position: absolute;
+    left: 0;
+    width: 50px;
+    height: 100%;
+    font-size: 40px;
+    @include clearButton;
+
+    &:hover {
+      cursor: pointer;
+      color: rgb(44, 44, 44);
+    }
+  }
+
+  .header-panel-logo {
+    font-size: 30px;
+  }
 }
