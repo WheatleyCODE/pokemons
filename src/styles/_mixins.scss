@@ -15,3 +15,16 @@
   background-color: rgba(0, 0, 0, 0);
   border: none;
 }
+
+@mixin whiteButton() {
+  background-color: rgb(231, 231, 231);
+  color: rgb(48, 48, 48);
+  border-radius: 5px;
+  &:hover {
+    background-color: rgb(221, 221, 221);
+    cursor: pointer;
+  }
+  &:focus {
+    box-shadow: 0 0 0 2px rgb(231, 231, 231);
+  }
+}

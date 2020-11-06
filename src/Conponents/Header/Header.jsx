@@ -20,7 +20,7 @@ const Header = ({ pokemonsData }) => {
         <button style={styles} onClick={onClickHandler} className="header-panel-nemu" type="button">
           {isOpen ? <i className="fa fa-times" aria-hidden="true" /> : <i className="fa fa-bars" aria-hidden="true" />}
         </button>
-        <span className="header-panel-logo">Pokemons wrap</span>
+        <span className="header-panel-logo"> <img className="logo" src="https://i1.sndcdn.com/avatars-000146217229-eb1v1y-t500x500.jpg" alt="ball"/> Pokemons wrap</span>
       </div>
       {isOpen ? <div><ToggleMenu pokemons={pokemonsData.pokemons} /><div onClick={onClickHandler} className="shadow"></div></div> : null}
     </div>

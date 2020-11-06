@@ -20,6 +20,9 @@ const MainPage = ({ pokemonsData, fetchPokemons }) => {
         {pokemons}
         {pokemonsData.loading ? <Loader /> : null}
       </div>
+      <div className="mainPage-morePokemons">
+        <button type="button">Мне нужно больше покемонов!</button>
+      </div>
     </div>
   )
 }

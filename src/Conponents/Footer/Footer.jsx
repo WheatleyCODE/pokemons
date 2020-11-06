@@ -5,9 +5,12 @@ const Footer = () => {
   return (
     <div className="footer">
       <div className="footer-panel">
-        <span className="footer-panel-text">Первый заголовок</span>
-        <span className="footer-panel-text">Второй заголовок</span>
-        <span className="footer-panel-text">Третий заголовок</span>
+        <div>
+          <span className="footer-panel-text"> <i className="fa fa-heart-o" aria-hidden="true" />Какой ваш любимый?</span>
+        </div>
+        <div>
+          <span className="footer-panel-text"><i className="fa fa-star-o" aria-hidden="true" />Что едят покемоны?</span>
+        </div>
       </div>
     </div>
   )
