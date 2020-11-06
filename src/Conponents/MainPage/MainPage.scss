@@ -1,8 +1,13 @@
+
+
 .mainPage {
   display: flex;
   justify-content: center;
 }
 .mainPage-pokemons {
-  width: 80%;
-  height: 700px;
+  margin-top: 50px;
+  width: 70%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }
