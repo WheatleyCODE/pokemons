@@ -1,10 +1,16 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { connect } from 'react-redux'
 import PokemonCard from './PokemonCard/PokemonCard'
 import './MainPage.scss'
+import { fetchPokemonsAC } from '../../Redux/actions'
+import Loader from '../Loader/Loader'
 
-const MainPage = ({ pokemonsData }) => {
-  const pokemons = pokemonsData.map((elem) => {
+const MainPage = ({ pokemonsData, fetchPokemons }) => {
+  console.log(pokemonsData.loading, 'kkkkkkkkkk')
+  useEffect(() => {
+    fetchPokemons()
+  }, []);
+  const pokemons = pokemonsData.pokemons.map((elem) => {
     return <PokemonCard key={elem.name} name={elem.name} />
   })
   console.log(pokemons)
@@ -12,6 +18,7 @@ const MainPage = ({ pokemonsData }) => {
     <div className="mainPage">
       <div className="mainPage-pokemons">
         {pokemons}
+        {pokemonsData.loading ? <Loader /> : null}
       </div>
     </div>
   )
@@ -19,12 +26,13 @@ const MainPage = ({ pokemonsData }) => {
 
 function mapStateToProps(state) {
   return {
-    pokemonsData: state.mainPageData.pokemons,
+    pokemonsData: state.mainPageData,
   }
 }
 
 function mapDispatchToProps(dispatch) {
   return {
+    fetchPokemons: () => dispatch(fetchPokemonsAC()),
   }
 }
 export default connect(mapStateToProps, mapDispatchToProps)(MainPage)
