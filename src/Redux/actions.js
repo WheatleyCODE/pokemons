@@ -3,7 +3,23 @@ import {
   FETCH_START,
   FETCH_SUCCSESS,
   FETCH_ERROR,
+  ADD_OFFSET,
+  FILTER_POKEMONS,
 } from './constants'
+
+export function filterPokemonsAC(str) {
+  return {
+    type: FILTER_POKEMONS,
+    str,
+  }
+}
+
+export function addOffsetAC(num) {
+  return {
+    type: ADD_OFFSET,
+    num,
+  }
+}
 
 export function fetchPokemonsStart() {
   return {
@@ -23,15 +39,15 @@ export function fetchPokemonsError(error) {
   }
 }
 
-export const fetchPokemonsAC = () => (
+export const fetchPokemonsAC = (limit, offset) => (
   async (dispatch) => {
     dispatch(fetchPokemonsStart())
     try {
-      const response = await Axios.get('https://pokeapi.co/api/v2/pokemon?limit=30&offset=0')
+      const response = await Axios.get(`https://pokeapi.co/api/v2/pokemon?limit=${limit}&offset=${offset}`)
       const pokemons = []
-      const promises = response.data.results.map((elem) => {
-        return Axios.get(elem.url)
-      })
+      const promises = response.data.results.map((elem) => (
+        Axios.get(elem.url)
+      ))
       for await (const promise of promises) {
         pokemons.push(promise.data)
       }

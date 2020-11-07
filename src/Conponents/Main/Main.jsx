@@ -11,13 +11,12 @@ import { fetchPokemonsAC } from '../../Redux/actions'
 
 const Main = ({ pokemonsData, fetchPokemons }) => {
   useEffect(() => {
-    fetchPokemons()
+    fetchPokemons(30, 0)
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
-  console.log(pokemonsData)
-  const routes = pokemonsData.map((elem) => {
-    return <Route key={elem.name} path={`/${elem.name}`} render={() => <PokemonPage pokemon={elem} />} />
-  })
+  const routes = pokemonsData.map((elem) => (
+    <Route key={elem.name} path={`/${elem.name}`} render={() => <PokemonPage pokemon={elem} />} />
+  ))
   return (
     <div>
       <Header />
@@ -40,7 +39,7 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
   return {
-    fetchPokemons: () => dispatch(fetchPokemonsAC()),
+    fetchPokemons: (limit, offset) => dispatch(fetchPokemonsAC(limit, offset)),
   }
 }
 

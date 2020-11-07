@@ -3,20 +3,15 @@ import { firstToUp } from '../../utils/utils'
 import './PokemonPage.scss'
 
 const PokemonPage = ({ pokemon }) => {
-  console.log(pokemon)
-  const abilities = pokemon.abilities.map((elem) => {
-    return <span key={elem.ability.name}>Способность: {elem.ability.name}</span>
-  })
-  const stats = pokemon.stats.map((elem) => {
-    console.log(elem.base_stat)
-    console.log(elem.stat.name)
-    return (
-      <span key={elem.stat.name}>{elem.stat.name}: {elem.base_stat}</span>
-    )
-  })
-  const types = pokemon.types.map((elem) => {
-    return <span key={elem.type.name}>Тип: {elem.type.name}</span>
-  })
+  const abilities = pokemon.abilities.map((elem) => (
+    <span key={elem.ability.name}>Способность: {elem.ability.name}</span>
+  ))
+  const stats = pokemon.stats.map((elem) => (
+    <span key={elem.stat.name}>{elem.stat.name}: {elem.base_stat}</span>
+  ))
+  const types = pokemon.types.map((elem) => (
+    <span key={elem.type.name}>Тип: {elem.type.name}</span>
+  ))
   return (
     <div className="pokemonPage">
       <div className="pokemonPage-main">
@@ -37,10 +32,6 @@ const PokemonPage = ({ pokemon }) => {
           <span className="title types">Типы</span>
           {types}
         </div>
-        {/* 
-        <span>{pokemon.id}</span>
-        <span>{pokemon.order}</span>
-         */}
       </div>
     </div>
   )

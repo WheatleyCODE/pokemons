@@ -43,13 +43,18 @@
     }
   }
 }
+@media (max-width: 575px) {
+  .logo-text {
+    display: none !important;
+  }
+ }
 .shadow {
   position: absolute;
   z-index: 0;
   right: 0;
   height: 100vh;
   width: 100vw;
-  background-color: rgba(0, 0, 0, 0.212);
+  background-color: rgba(0, 0, 0, 0.512);
 }
 .logo-link {
   color: black;

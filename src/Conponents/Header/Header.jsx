@@ -5,7 +5,6 @@ import ToggleMenu from './ToggleMenu/ToggleMenu'
 import './Header.scss'
 
 const Header = ({ pokemonsData }) => {
-
   const [isOpen, setIsOpen] = useState(false)
 
   const onClickHandler = () => {
@@ -13,7 +12,7 @@ const Header = ({ pokemonsData }) => {
   }
 
   let styles = {}
-  isOpen ? styles = { marginLeft: '310px' } : styles = {}
+  isOpen ? styles = { marginLeft: '310px', color: 'white' } : styles = {}
 
   return (
     <div className="header">
@@ -22,10 +21,10 @@ const Header = ({ pokemonsData }) => {
           {isOpen ? <i className="fa fa-times" aria-hidden="true" /> : <i className="fa fa-bars" aria-hidden="true" />}
         </button>
         <NavLink className="logo-link" to="/">
-          <span className="header-panel-logo"> <img className="logo" src="https://i1.sndcdn.com/avatars-000146217229-eb1v1y-t500x500.jpg" alt="ball" /> Pokemons wrap</span>
+          <span className="header-panel-logo"> <img className="logo" src="https://i1.sndcdn.com/avatars-000146217229-eb1v1y-t500x500.jpg" alt="ball" /><span className="logo-text">Pokemons wrap</span></span>
         </NavLink>
       </div>
-      {isOpen ? <div><ToggleMenu pokemons={pokemonsData.pokemons} /><div onClick={onClickHandler} className="shadow"></div></div> : null}
+      {isOpen ? <div><ToggleMenu click={onClickHandler} pokemons={pokemonsData.pokemons} /><div onClick={onClickHandler} className="shadow"></div></div> : null}
     </div>
   )
 }
@@ -36,10 +35,4 @@ function mapStateToProps(state) {
   }
 }
 
-function mapDispatchToProps(dispatch) {
-  return {
-    // fetchPokemons: () => dispatch(fetchPokemonsAC()),
-  }
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(Header)
+export default connect(mapStateToProps, null)(Header)
