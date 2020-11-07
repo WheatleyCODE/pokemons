@@ -1,15 +1,18 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom'
 import './ToggleMenu.scss'
 
 const ToggleMenu = ({ pokemons }) => {
   const slots = pokemons.map((elem) => {
     return (
-      <div className="item" key={elem.name}>
-        <div className="item-block">
-          <img src={elem.sprites.front_shiny} alt={elem.name} />
-          <span>{elem.name}</span>
+      <NavLink key={elem.name} className="link" to={elem.name}>
+        <div className="item">
+          <div className="item-block">
+            <img src={elem.sprites.front_shiny} alt={elem.name} />
+            <span>{elem.name}</span>
+          </div>
         </div>
-      </div>
+      </NavLink>
     )
   })
 

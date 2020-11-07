@@ -1,5 +1,6 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
+import { firstToUp } from '../../../utils/utils'
 import './PokemonCard.scss'
 
 const PokemonCard = ({ pokemon }) => {
@@ -8,7 +9,7 @@ const PokemonCard = ({ pokemon }) => {
       <div className="pokemonCard">
         <div className="pokemonCard-main">
           <img src={pokemon.sprites.front_shiny} alt={pokemon.name} />
-          <span>{pokemon.name}</span>
+          <span>{firstToUp(pokemon.name)}</span>
         </div>
       </div>
     </NavLink>

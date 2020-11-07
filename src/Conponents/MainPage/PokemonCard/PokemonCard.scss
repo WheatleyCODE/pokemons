@@ -2,6 +2,8 @@
 
 .pokemonCard {
   @include cardStyle;
+  height: 200px;
+  width: 200px;
   .pokemonCard-main {
     display: flex;
     align-items: center;
