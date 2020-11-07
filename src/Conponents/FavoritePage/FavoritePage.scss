@@ -1,8 +1,9 @@
 .favoritePage {
-  height: calc(100vh - 120px);
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+  min-height: calc(100vh - 120px);
 }
 .favoritePage-noFavoriteBlock {
   background-color: rgb(230, 230, 230);
@@ -18,5 +19,21 @@
     font-size: 80px;
     margin-left: 30px;
     color: rgb(129, 129, 129);
+  }
+}
+.favoritePage-pokemons {
+  margin-top: 100px;
+  width: 70%;
+  max-width: 1200px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  .favoritePage-pokemons-title {
+    font-size: 30px;
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid black;
+    padding-bottom: 14px;
+    margin-bottom: 30px;
   }
 }

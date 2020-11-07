@@ -23,7 +23,7 @@ const Main = ({ pokemonsData, fetchPokemons }) => {
       <Header />
       <Switch>
         <Route exact path="/" component={MainPage} />
-        <Route path="/favorite" component={FavoritePage} />
+        <Route path="/favorite" render={() => <FavoritePage pokemons={pokemonsData} />} />
         {routes}
         {/* <Redirect to="/" /> */}
       </Switch>
