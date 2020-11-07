@@ -1,8 +1,14 @@
 import React from 'react'
+import { connect } from 'react-redux'
 import { firstToUp } from '../../utils/utils'
+import { setFavoriteAC } from '../../Redux/actions'
 import './PokemonPage.scss'
 
-const PokemonPage = ({ pokemon }) => {
+const PokemonPage = ({ pokemon, setFavorite }) => {
+  const onClickHandler = (id) => {
+    setFavorite(id)
+  }
+
   const abilities = pokemon.abilities.map((elem) => (
     <span key={elem.ability.name}>Способность: {elem.ability.name}</span>
   ))
@@ -18,6 +24,9 @@ const PokemonPage = ({ pokemon }) => {
         <div className="pokemonPage-main-pokemonImg">
           <img src={pokemon.sprites.front_shiny} alt="" />
           <span className="name">{firstToUp(pokemon.name)}</span>
+          {pokemon.isFavorite 
+            ? <span onClick={() => {onClickHandler(pokemon.id)}} className="pokemonPage-main-pokemonImg-favoriteIcon favoriteIcon">Favorite <i className="fa fa-heart" aria-hidden="true" /></span> 
+            : <span onClick={() => {onClickHandler(pokemon.id)}} className="pokemonPage-main-pokemonImg-favoriteIcon">Favorite <i className="fa fa-heart-o" aria-hidden="true" /></span>}
         </div>
         <div className="pokemonPage-main-stats">
           <span className="title">Характеристики</span>
@@ -37,4 +46,10 @@ const PokemonPage = ({ pokemon }) => {
   )
 }
 
-export default PokemonPage
+function mapDispatchToProps(dispatch) {
+  return {
+    setFavorite: (id) => dispatch(setFavoriteAC(id)),
+  }
+}
+
+export default connect(null, mapDispatchToProps)(PokemonPage)

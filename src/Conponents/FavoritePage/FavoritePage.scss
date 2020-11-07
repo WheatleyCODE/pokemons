@@ -1,0 +1,22 @@
+.favoritePage {
+  height: calc(100vh - 120px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.favoritePage-noFavoriteBlock {
+  background-color: rgb(230, 230, 230);
+  font-size: 25px;
+  padding: 30px;
+  border-radius: 10px;
+  span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  i {
+    font-size: 80px;
+    margin-left: 30px;
+    color: rgb(129, 129, 129);
+  }
+}

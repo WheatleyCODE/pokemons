@@ -5,7 +5,15 @@ import {
   FETCH_ERROR,
   ADD_OFFSET,
   FILTER_POKEMONS,
+  ADD_FAVORITE,
 } from './constants'
+
+export function setFavoriteAC(id) {
+  return {
+    type: ADD_FAVORITE,
+    id,
+  }
+}
 
 export function filterPokemonsAC(str) {
   return {
@@ -49,6 +57,7 @@ export const fetchPokemonsAC = (limit, offset) => (
         Axios.get(elem.url)
       ))
       for await (const promise of promises) {
+        promise.data.isFavorite = false
         pokemons.push(promise.data)
       }
       dispatch(fetchPokemonsSuccess(pokemons))

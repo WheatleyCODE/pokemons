@@ -4,6 +4,7 @@ import {
   FETCH_ERROR,
   ADD_OFFSET,
   FILTER_POKEMONS,
+  ADD_FAVORITE,
 } from './constants'
 
 const initialState = {
@@ -50,6 +51,21 @@ const mainPage_reducer = (state = initialState, action) => {
       return {
         ...state,
         filterPokemons: newFilterPokemons,
+      }
+    }
+    case ADD_FAVORITE: {
+      const prevPokemons = state.pokemons
+      const newPokemons = prevPokemons.map((elem) => {
+        if (elem.id === action.id) {
+          const newElem = { ...elem }
+          newElem.isFavorite = !elem.isFavorite
+          return newElem
+        }
+        return elem
+      })
+      return {
+        ...state,
+        pokemons: newPokemons,
       }
     }
     default:
