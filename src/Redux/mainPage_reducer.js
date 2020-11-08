@@ -31,6 +31,7 @@ const mainPage_reducer = (state = initialState, action) => {
       }
     }
     case FETCH_ERROR:
+      console.error(action.error)
       return {
         ...state,
         loading: false,

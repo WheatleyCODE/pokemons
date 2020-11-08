@@ -7,6 +7,7 @@
   flex-direction: column;
   min-height: calc(100vh - 120px);
 }
+
 .mainPage-pokemons {
   margin-top: 100px;
   width: 80%;
@@ -15,6 +16,7 @@
   justify-content: center;
   flex-wrap: wrap;
 }
+
 .mainPage-morePokemons {
   button {
     @include clearButton;

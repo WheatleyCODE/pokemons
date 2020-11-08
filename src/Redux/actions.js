@@ -34,12 +34,14 @@ export function fetchPokemonsStart() {
     type: FETCH_START,
   }
 }
+
 export function fetchPokemonsSuccess(response) {
   return {
     type: FETCH_SUCCSESS,
     response,
   }
 }
+
 export function fetchPokemonsError(error) {
   return {
     type: FETCH_ERROR,

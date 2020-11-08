@@ -18,6 +18,7 @@ const PokemonPage = ({ pokemon, setFavorite }) => {
   const types = pokemon.types.map((elem) => (
     <span key={elem.type.name}>Тип: {elem.type.name}</span>
   ))
+
   return (
     <div className="pokemonPage">
       <div className="pokemonPage-main">

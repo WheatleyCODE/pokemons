@@ -1,12 +1,11 @@
-import React from 'react'
-import { useEffect } from 'react'
+import React, { useEffect } from 'react'
 import { connect } from 'react-redux'
 import { NavLink } from 'react-router-dom'
 import { filterPokemonsAC } from '../../../Redux/actions'
 import { firstToUp } from '../../../utils/utils'
 import './ToggleMenu.scss'
 
-const ToggleMenu = ({ pokemons, filterPokemons, filter, click }) => {
+const ToggleMenu = ({ filterPokemons, filter, click }) => {
   useEffect(() => {
     filter('')
     // eslint-disable-next-line react-hooks/exhaustive-deps

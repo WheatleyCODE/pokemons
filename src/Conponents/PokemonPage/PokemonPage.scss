@@ -7,6 +7,7 @@
   min-height: calc(100vh - 270px);
   padding-top: 150px;
 }
+
 .pokemonPage-main {
   display: flex;
   flex-wrap: wrap;
@@ -45,12 +46,15 @@
   padding-bottom: 25px;
   margin-right: 12px;
 }
+
 .types {
   margin-top: 30px;
 }
+
 .name {
   font-size: 40px !important;
 }
+
 .pokemonPage-main-pokemonImg-favoriteIcon {
   font-size: 20px !important;
   margin-top: 40px;

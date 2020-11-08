@@ -9,6 +9,7 @@ const PokemonCard = ({ pokemon, setFavorite }) => {
   const onClickHandler = (id) => {
     setFavorite(id)
   }
+
   return (
     <div className="pokemonCard">
       {pokemon.isFavorite 

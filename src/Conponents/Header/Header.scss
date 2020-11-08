@@ -11,13 +11,13 @@
   background-color: #fff;
   box-shadow: 0 0 5px 0 rgb(87, 87, 87);
 }
+
 .header-panel {
   position: relative;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-
   .header-panel-nemuLeft, .header-panel-nemuRight {
     position: absolute;
     z-index: 100;
@@ -25,12 +25,13 @@
     height: 100%;
     font-size: 40px;
     @include clearButton;
-
+  
     &:hover {
       cursor: pointer;
       color: rgb(71, 71, 71);
     }
   }
+
   .header-panel-nemuLeft {
     left: 0;
     margin-left: 80px;
@@ -51,11 +52,13 @@
     }
   }
 }
+
 @media (max-width: 575px) {
   .logo-text {
     display: none !important;
   }
  }
+
 .shadow {
   position: absolute;
   z-index: 0;
@@ -64,6 +67,7 @@
   width: 100vw;
   background-color: rgba(0, 0, 0, 0.512);
 }
+
 .logo-link {
   color: black;
   text-decoration: none;
