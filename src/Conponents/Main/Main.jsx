@@ -25,7 +25,6 @@ const Main = ({ pokemonsData, fetchPokemons }) => {
         <Route exact path="/" component={MainPage} />
         <Route path="/favorite" render={() => <FavoritePage pokemons={pokemonsData} />} />
         {routes}
-        {/* <Redirect to="/" /> */}
       </Switch>
       <Footer />
     </div>
