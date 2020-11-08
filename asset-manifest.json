@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/pokemons/static/css/main.338c3df5.chunk.css",
+    "main.js": "/pokemons/static/js/main.e874626d.chunk.js",
+    "main.js.map": "/pokemons/static/js/main.e874626d.chunk.js.map",
+    "runtime-main.js": "/pokemons/static/js/runtime-main.22858f6c.js",
+    "runtime-main.js.map": "/pokemons/static/js/runtime-main.22858f6c.js.map",
+    "static/js/2.345b10a9.chunk.js": "/pokemons/static/js/2.345b10a9.chunk.js",
+    "static/js/2.345b10a9.chunk.js.map": "/pokemons/static/js/2.345b10a9.chunk.js.map",
+    "index.html": "/pokemons/index.html",
+    "precache-manifest.7d5dd92f97d530019ac707f50b0fbf5a.js": "/pokemons/precache-manifest.7d5dd92f97d530019ac707f50b0fbf5a.js",
+    "service-worker.js": "/pokemons/service-worker.js",
+    "static/css/main.338c3df5.chunk.css.map": "/pokemons/static/css/main.338c3df5.chunk.css.map",
+    "static/js/2.345b10a9.chunk.js.LICENSE.txt": "/pokemons/static/js/2.345b10a9.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.22858f6c.js",
+    "static/js/2.345b10a9.chunk.js",
+    "static/css/main.338c3df5.chunk.css",
+    "static/js/main.e874626d.chunk.js"
+  ]
+}
