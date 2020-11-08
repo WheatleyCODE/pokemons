@@ -46,7 +46,7 @@ const mainPage_reducer = (state = initialState, action) => {
     case FILTER_POKEMONS: {
       const prevPokemons = state.pokemons
       const newFilterPokemons = prevPokemons.filter((elem) => (
-        elem.name.includes(action.str)
+        elem.name.includes(action.str.toLowerCase())
       ))
       return {
         ...state,
