@@ -5,6 +5,7 @@ Published https://wheatleycode.github.io/pokemons
 Покемоны взяты с https://pokeapi.co/
 
 В качестве основы взят create-react-app
+
 В проекте использованы технологии:
 - React
 - Redux
